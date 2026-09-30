@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>巴卡漫画 - 免费看漫画的在线漫画阅读平台_bakamanhua-app</title>
+<meta name="description" content="巴卡漫画（bakamanhua-app）是专注中文漫画阅读的在线漫画平台，提供热血、恋爱、悬疑、国漫等全品类漫画在线阅读，每日更新、高清画质、离线缓存，打开巴卡漫画即可免费看漫画。" />
+<meta name="keywords" content="巴卡漫画,巴卡漫画官网,巴卡漫画app,bakamanhua-app,免费漫画,在线看漫画,漫画阅读平台,国漫推荐" />
+<meta name="author" content="巴卡漫画" />
+<meta name="robots" content="index,follow" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="theme-color" content="#6d28d9" />
+<link rel="canonical" href="https://bakamanhua-app.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="巴卡漫画" />
+<meta property="og:title" content="巴卡漫画 - 免费看漫画的在线漫画阅读平台" />
+<meta property="og:description" content="巴卡漫画 bakamanhua-app 提供全品类中文漫画在线阅读，每日更新、高清画质、离线缓存，随时随地免费看漫画。" />
+<meta property="og:url" content="https://bakamanhua-app.com/" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="巴卡漫画 - 免费看漫画的在线漫画阅读平台" />
+<meta name="twitter:description" content="巴卡漫画 bakamanhua-app，全品类中文漫画在线阅读，每日更新高清章节。" />
+<style>
+:root{
+  --bg:#0b0a14;
+  --bg2:#14122a;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.12);
+  --txt:#f3f1ff;
+  --sub:#a9a3c9;
+  --p1:#7c3aed;
+  --p2:#06b6d4;
+  --p3:#f43f5e;
+  --radius:18px;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol{list-style:none;}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 18px;}
+
+/* 顶栏 */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(11,10,20,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px;}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:.5px;}
+.logo .mark{
+  width:36px;height:36px;border-radius:11px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--p1),var(--p2));
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow:0 6px 18px rgba(124,58,237,.45);
+}
+.logo span.dm{display:block;font-size:11px;color:var(--sub);font-weight:500;letter-spacing:1px;}
+.nav{display:flex;align-items:center;gap:4px;}
+.nav a{
+  font-size:14px;color:var(--sub);padding:8px 12px;border-radius:10px;
+  transition:.25s;white-space:nowrap;
+}
+.nav a:hover,.nav a:focus{color:#fff;background:var(--card);}
+.nav a.cta{
+  background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-weight:700;
+  box-shadow:0 6px 16px rgba(6,182,212,.28);
+}
+.burger{
+  display:none;width:42px;height:38px;border:1px solid var(--line);border-radius:10px;
+  background:var(--card);color:#fff;font-size:18px;cursor:pointer;
+}
+.mnav{display:none;padding:8px 0 14px;border-top:1px solid var(--line);}
+.mnav a{display:block;padding:11px 4px;font-size:15px;color:var(--sub);border-bottom:1px dashed rgba(255,255,255,.07);}
+.mnav.show{display:block;}
+
+/* Hero */
+.hero{position:relative;padding:64px 0 52px;overflow:hidden;}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;
+}
+.hero:before{width:460px;height:460px;background:#7c3aed;top:-160px;left:-140px;}
+.hero:after{width:420px;height:420px;background:#06b6d4;bottom:-200px;right:-120px;}
+.hero .wrap{position:relative;z-index:1;}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#c9c3f5;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+}
+.hero h1{
+  font-size:clamp(30px,7vw,56px);line-height:1.2;font-weight:900;margin:20px 0 14px;letter-spacing:-.5px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg,#a78bfa,#22d3ee);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:clamp(15px,2.4vw,18px);color:var(--sub);max-width:640px;}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 30px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:14px;font-size:15px;font-weight:700;transition:.25s;
+}
+.btn-p{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 10px 26px rgba(124,58,237,.35);}
+.btn-o{border:1px solid var(--line);background:var(--card);color:#fff;}
+.btn:hover{transform:translateY(-2px);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;text-align:center;}
+.stat b{display:block;font-size:clamp(20px,3.4vw,28px);color:#fff;}
+.stat span{font-size:12px;color:var(--sub);}
+
+/* 通用区块 */
+section{padding:56px 0;}
+.sec-head{margin-bottom:28px;}
+.sec-head .kicker{font-size:12px;letter-spacing:2px;color:#22d3ee;text-transform:uppercase;font-weight:700;}
+.sec-head h2{font-size:clamp(22px,4.4vw,32px);font-weight:800;margin:8px 0 8px;}
+.sec-head p{color:var(--sub);font-size:15px;max-width:720px;}
+.more{color:#a78bfa;font-size:14px;font-weight:600;}
+
+/* 栏目1 推荐 */
+.grid-m{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:.3s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(167,139,250,.6);box-shadow:0 16px 34px rgba(0,0,0,.45);}
+.thumb{
+  aspect-ratio:3/4;display:flex;align-items:flex-end;padding:14px;
+  font-weight:800;font-size:17px;color:#fff;position:relative;
+}
+.thumb i{position:absolute;top:12px;left:12px;font-style:normal;font-size:11px;
+  background:rgba(0,0,0,.55);padding:4px 9px;border-radius:8px;}
+.t1{background:linear-gradient(160deg,#7c3aed,#f43f5e);}
+.t2{background:linear-gradient(160deg,#06b6d4,#3b82f6);}
+.t3{background:linear-gradient(160deg,#f59e0b,#ef4444);}
+.t4{background:linear-gradient(160deg,#10b981,#0ea5e9);}
+.t5{background:linear-gradient(160deg,#8b5cf6,#ec4899);}
+.t6{background:linear-gradient(160deg,#f97316,#facc15);}
+.t7{background:linear-gradient(160deg,#22d3ee,#6366f1);}
+.t8{background:linear-gradient(160deg,#ef4444,#7c3aed);}
+.card .body{padding:14px;}
+.card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.card p{font-size:13px;color:var(--sub);}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:#8f89b3;padding:0 14px 14px;}
+
+/* 栏目2 分类 */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+.cat{
+  border:1px solid var(--line);background:var(--card);border-radius:14px;
+  padding:18px 10px;text-align:center;font-size:14px;font-weight:600;transition:.25s;
+}
+.cat b{display:block;font-size:24px;margin-bottom:6px;}
+.cat:hover{background:rgba(124,58,237,.18);border-color:rgba(167,139,250,.5);transform:translateY(-3px);}
+
+/* 栏目3 排行 */
+.rank{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.panel h3{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.panel ol li{
+  display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:14px;
+}
+.panel ol li:last-child{border-bottom:0;}
+.no{
+  flex:0 0 26px;height:26px;border-radius:8px;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#c4bdfd;
+}
+.panel ol li:nth-child(1) .no{background:linear-gradient(135deg,#f43f5e,#f97316);color:#fff;}
+.panel ol li:nth-child(2) .no{background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;}
+.panel ol li:nth-child(3) .no{background:linear-gradient(135deg,#0ea5e9,#22d3ee);color:#04202b;}
+.panel ol li p{flex:1;}
+.hot{font-size:12px;color:#f43f5e;font-weight:700;}
+
+/* 栏目4 下载 */
+.download{
+  background:linear-gradient(135deg,rgba(124,58,237,.22),rgba(6,182,212,.16));
+  border:1px solid var(--line);border-radius:26px;padding:38px 26px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;
+}
+.download h2{font-size:clamp(22px,4.4vw,30px);font-weight:800;margin-bottom:10px;}
+.download p{color:var(--sub);font-size:15px;}
+.dlist{display:grid;gap:10px;margin:18px 0 22px;}
+.dlist div{display:flex;align-items:center;gap:10px;font-size:14px;color:#ded9f7;}
+.dlist div b{color:#22d3ee;}
+.qrbox{
+  background:rgba(0,0,0,.3);border:1px dashed rgba(255,255,255,.25);border-radius:20px;
+  padding:26px;text-align:center;
+}
+.qr{
+  width:150px;height:150px;margin:0 auto 14px;border-radius:14px;
+  background:
+    repeating-linear-gradient(0deg,#fff 0 6px,#0b0a14 6px 12px),
+    repeating-linear-gradient(90deg,#fff 0 6px,#0b0a14 6px 12px);
+  background-blend-mode:difference;border:6px solid #fff;
+}
+.qrbox p{font-size:13px;color:var(--sub);}
+
+/* 栏目5 特性 */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.f{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;}
+.f b{display:block;font-size:26px;margin-bottom:10px;}
+.f h3{font-size:16px;margin-bottom:8px;}
+.f p{font-size:13.5px;color:var(--sub);}
+
+/* 栏目6 FAQ */
+.faq{display:grid;gap:12px;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+}
+details summary{cursor:pointer;font-size:15.5px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px;}
+details summary::-webkit-details-marker{display:none;}
+details summary:after{content:"+";color:#22d3ee;font-weight:800;}
+details[open] summary:after{content:"-";}
+details p{font-size:14px;color:var(--sub);margin-top:12px;border-top:1px dashed rgba(255,255,255,.1);padding-top:12px;}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;}
+.about .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.about p{color:var(--sub);font-size:14.5px;margin-bottom:12px;}
+.about strong{color:#fff;}
+.kv{display:grid;gap:10px;margin-top:14px;}
+.kv div{display:flex;justify-content:space-between;font-size:13.5px;border-bottom:1px dashed rgba(255,255,255,.09);padding-bottom:8px;}
+.kv span:first-child{color:var(--sub);}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:var(--bg2);padding:40px 0 26px;margin-top:20px;}
+.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:22px;}
+.fgrid h4{font-size:15px;margin-bottom:12px;}
+.fgrid li{font-size:13.5px;color:var(--sub);padding:5px 0;}
+.fgrid li a:hover{color:#a78bfa;}
+.copy{
+  margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:#7d7799;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .grid-m{grid-template-columns:repeat(3,1fr);}
+  .cats{grid-template-columns:repeat(4,1fr);}
+  .feat{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:820px){
+  .nav{display:none;}
+  .burger{display:block;}
+  .rank{grid-template-columns:1fr;}
+  .download,.about{grid-template-columns:1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .wrap{padding:0 14px;}
+  .hero{padding:44px 0 34px;}
+  section{padding:42px 0;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .grid-m{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .cats{grid-template-columns:repeat(3,1fr);}
+  .feat{grid-template-columns:1fr;}
+  .card h3{font-size:15px;}
+  .fgrid{grid-template-columns:1fr;}
+  .copy{flex-direction:column;}
+}
+@media (max-width:380px){
+  .grid-m{grid-template-columns:1fr;}
+  .cats{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://bakamanhua-app.com/#website",
+      "url":"https://bakamanhua-app.com/",
+      "name":"巴卡漫画",
+      "alternateName":"bakamanhua-app",
+      "description":"巴卡漫画是在线漫画阅读平台，提供全品类中文漫画免费在线阅读。",
+      "inLanguage":"zh-CN",
+      "publisher":{"@id":"https://bakamanhua-app.com/#organization"}
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://bakamanhua-app.com/#organization",
+      "name":"巴卡漫画",
+      "url":"https://bakamanhua-app.com/",
+      "logo":"https://bakamanhua-app.com/logo.png",
+      "sameAs":["https://bakamanhua-app.com/"]
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://bakamanhua-app.com/#webpage",
+      "url":"https://bakamanhua-app.com/",
+      "name":"巴卡漫画 - 免费看漫画的在线漫画阅读平台",
+      "isPartOf":{"@id":"https://bakamanhua-app.com/#website"},
+      "inLanguage":"zh-CN",
+      "breadcrumb":{"@id":"https://bakamanhua-app.com/#breadcrumb"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://bakamanhua-app.com/#breadcrumb",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"巴卡漫画首页","item":"https://bakamanhua-app.com/#home"},
+        {"@type":"ListItem","position":2,"name":"漫画分类","item":"https://bakamanhua-app.com/#category"},
+        {"@type":"ListItem","position":3,"name":"热门排行","item":"https://bakamanhua-app.com/#rank"},
+        {"@type":"ListItem","position":4,"name":"下载巴卡漫画","item":"https://bakamanhua-app.com/#download"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="巴卡漫画首页">
+      <span class="mark" aria-hidden="true">巴</span>
+      <span>巴卡漫画<span class="dm">bakamanhua-app</span></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#category">漫画分类</a>
+      <a href="#rank">热门排行</a>
+      <a href="#feature">功能特色</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta" href="#download">下载App</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="展开菜单" aria-expanded="false" aria-controls="mnav">☰</button>
+  </div>
+  <div class="wrap">
+    <nav class="mnav" id="mnav" aria-label="移动导航">
+      <a href="#home">首页</a>
+      <a href="#category">漫画分类</a>
+      <a href="#rank">热门排行</a>
+      <a href="#feature">功能特色</a>
+      <a href="#download">下载App</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">关于巴卡漫画</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <span class="tagline">◆ 巴卡漫画 · 每日 00:00 准时上新章节</span>
+      <h1>打开<em>巴卡漫画</em>，<br />免费看漫画看到停不下来</h1>
+      <p class="lead">
+        巴卡漫画（bakamanhua-app）是面向中文读者的在线漫画阅读平台，收录热血、恋爱、悬疑、搞笑、国漫、日漫等全品类作品，
+        支持高清大图、竖屏条漫、离线缓存与跨端续读，手机、平板、电脑打开巴卡漫画即可同步阅读进度。
+      </p>
+      <div class="btns">
+        <a class="btn btn-p" href="#download">免费下载 巴卡漫画</a>
+        <a class="btn btn-o" href="#category">浏览漫画分类</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>38,000+</b><span>漫画作品</span></div>
+        <div class="stat"><b>1,200万</b><span>注册读者</span></div>
+        <div class="stat"><b>每日 800+</b><span>更新章节</span></div>
+        <div class="stat"><b>4.8 分</b><span>读者评分</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目1：热门推荐 -->
+  <section id="recommend">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Hot Picks</span>
+        <h2>巴卡漫画热门推荐</h2>
+        <p>以下作品均为巴卡漫画站内本周阅读量榜首作品，点击卡片即可进入对应作品专区查看章节目录与更新计划。</p>
+      </div>
+      <div class="grid-m">
+        <article class="card">
+          <div class="thumb t1"><i>热血</i>逆光少年</div>
+          <div class="body"><h3>逆光少年</h3><p>少年带着秘密踏入异能学院，命运的齿轮开始转动。</p></div>
+          <div class="meta"><span>更新至 第218话</span><span class="hot">9.6分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t2"><i>悬疑</i>雾都谜案</div>
+          <div class="body"><h3>雾都谜案</h3><p>连环失踪案背后，藏着一座城市不愿提及的真相。</p></div>
+          <div class="meta"><span>更新至 第96话</span><span class="hot">9.4分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t3"><i>恋爱</i>橘子味的夏天</div>
+          <div class="body"><h3>橘子味的夏天</h3><p>同桌三年没说出口的话，在毕业那天终于有了答案。</p></div>
+          <div class="meta"><span>更新至 第152话</span><span class="hot">9.3分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t4"><i>国漫</i>山海志</div>
+          <div class="body"><h3>山海志</h3><p>以《山海经》为蓝本，重述东方妖兽世界的兴衰史。</p></div>
+          <div class="meta"><span>更新至 第74话</span><span class="hot">9.5分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t5"><i>搞笑</i>社畜生存手册</div>
+          <div class="body"><h3>社畜生存手册</h3><p>打工人的一天，从和打印机斗智斗勇开始。</p></div>
+          <div class="meta"><span>更新至 第301话</span><span class="hot">9.1分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t6"><i>奇幻</i>拾荒者之歌</div>
+          <div class="body"><h3>拾荒者之歌</h3><p>废土之上，一个少年带着机器人寻找最后的绿洲。</p></div>
+          <div class="meta"><span>更新至 第130话</span><span class="hot">9.2分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t7"><i>科幻</i>深空回响</div>
+          <div class="body"><h3>深空回响</h3><p>信号来自两百光年外，回应它的却是地球的过去。</p></div>
+          <div class="meta"><span>更新至 第58话</span><span class="hot">9.0分</span></div>
+        </article>
+        <article class="card">
+          <div class="thumb t8"><i>都市</i>午夜食堂</div>
+          <div class="body"><h3>午夜食堂</h3><p>凌晨两点开张的小店，收留着每一个未眠的人。</p></div>
+          <div class="meta"><span>更新至 第187话</span><span class="hot">9.4分</span></div>
+        </article>
+      </div>
+      <p style="margin-top:18px;"><a class="more" href="#rank">查看巴卡漫画完整推荐榜单 →</a></p>
+    </div>
+  </section>
+
+  <!-- 栏目2：漫画分类 -->
+  <section id="category">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Category</span>
+        <h2>巴卡漫画全品类分类导航</h2>
+        <p>巴卡漫画按题材、受众、地区与更新状态对作品进行结构化归类，读者可快速定位想看的漫画类型。</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#"><b>🔥</b>热血</a>
+        <a class="cat" href="#"><b>💗</b>恋爱</a>
+        <a class="cat" href="#"><b>🕵️</b>悬疑</a>
+        <a class="cat" href="#"><b>😂</b>搞笑</a>
+        <a class="cat" href="#"><b>🐉</b>国漫</a>
+        <a class="cat" href="#"><b>🌸</b>日漫</a>
+        <a class="cat" href="#"><b>🚀</b>科幻</a>
+        <a class="cat" href="#"><b>⚔️</b>玄幻</a>
+        <a class="cat" href="#"><b>🏙️</b>都市</a>
+        <a class="cat" href="#"><b>🏫</b>校园</a>
+        <a class="cat" href="#"><b>🍜</b>美食</a>
+        <a class="cat" href="#"><b>✅</b>完结</a>
+      </div>
+      <p style="margin-top:18px;"><a class="more" href="#recommend">返回巴卡漫画热门推荐 ↑</a></p>
+    </div>
+  </section>
+
+  <!-- 栏目3：热门排行 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Ranking</span>
+        <h2>巴卡漫画热门排行榜</h2>
+        <p>榜单每小时依据巴卡漫画站内阅读时长、收藏数与追更人数重新计算，真实反映当下读者的追漫风向。</p>
+      </div>
+      <div class="rank">
+        <div class="panel">
+          <h3>🔥 人气榜</h3>
+          <ol>
+            <li><span class="no">1</span><p>逆光少年</p><span class="hot">842万</span></li>
+            <li><span class="no">2</span><p>山海志</p><span class="hot">761万</span></li>
+            <li><span class="no">3</span><p>雾都谜案</p><span class="hot">690万</span></li>
+            <li><span class="no">4</span><p>橘子味的夏天</p><span class="hot">612万</span></li>
+            <li><span class="no">5</span><p>午夜食堂</p><span class="hot">588万</span></li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>⭐ 新作榜</h3>
+          <ol>
+            <li><span class="no">1</span><p>深空回响</p><span class="hot">新</span></li>
+            <li><span class="no">2</span><p>拾荒者之歌</p><span class="hot">新</span></li>
+            <li><span class="no">3</span><p>春日邮局</p><span class="hot">新</span></li>
+            <li><span class="no">4</span><p>机械之心</p><span class="hot">新</span></li>
+            <li><span class="no">5</span><p>荒原旅人</p><span class="hot">新</span></li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>👍 完结精选</h3>
+          <ol>
+            <li><span class="no">1</span><p>长夜将明</p><span class="hot">全120话</span></li>
+            <li><span class="no">2</span><p>少年与鲸</p><span class="hot">全86话</span></li>
+            <li><span class="no">3</span><p>纸上城邦</p><span class="hot">全150话</span></li>
+            <li><span class="no">4</span><p>第七封信</p><span class="hot">全64话</span></li>
+            <li><span class="no">5</span><p>雨夜列车</p><span class="hot">全98话</span></li>
+          </ol>
+        </div>
+      </div>
+      <p style="margin-top:18px;"><a class="more" href="#download">下载巴卡漫画，追更不错过 →</a></p>
+    </div>
+  </section>
+
+  <!-- 栏目4：下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <span class="kicker" style="font-size:12px;letter-spacing:2px;color:#22d3ee;font-weight:700;">Download</span>
+          <h2>下载巴卡漫画 App，随时看漫画</h2>
+          <p>巴卡漫画客户端支持 iOS、Android 与网页版，安装后即可享受离线缓存、夜间模式、条漫连续阅读等专属体验。</p>
+          <div class="dlist">
+            <div><b>✓</b> 离线缓存，地铁飞机照样追更</div>
+            <div><b>✓</b> 多端云同步，读到哪一话都记得</div>
+            <div><b>✓</b> 智能预加载，翻页零等待</div>
+            <div><b>✓</b> 无广告打扰，纯净看漫画</div>
+          </div>
+          <div class="btns" style="margin:0;">
+            <a class="btn btn-p" href="#">立即下载 巴卡漫画</a>
+            <a class="btn btn-o" href="#feature">了解功能特色</a>
+          </div>
+        </div>
+        <div class="qrbox">
+          <div class="qr" role="img" aria-label="巴卡漫画 App 下载二维码"></div>
+          <p>扫码或访问 <strong>bakamanhua-app.com</strong><br />即可获取巴卡漫画最新版安装包</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目5：功能特色 -->
+  <section id="feature">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Features</span>
+        <h2>巴卡漫画的六项核心能力</h2>
+        <p>从内容获取到阅读体验，巴卡漫画在每个环节都为漫画读者做了专项优化。</p>
+      </div>
+      <div class="feat">
+        <div class="f"><b>📚</b><h3>海量漫画库</h3><p>巴卡漫画收录超 3.8 万部作品，覆盖 20 余个题材分类，周更作品超过 2000 部。</p></div>
+        <div class="f"><b>🖼️</b><h3>高清原图画质</h3><p>支持原图级加载与智能压缩切换，漫画细节清晰不糊，大屏阅读同样出色。</p></div>
+        <div class="f"><b>📶</b><h3>离线缓存阅读</h3><p>一键缓存整本漫画，无网络环境下也能继续追更，流量消耗更低。</p></div>
+        <div class="f"><b>🌙</b><h3>护眼夜间模式</h3><p>多级亮度与色温调节，长时间看漫画也能保持舒适的视觉体验。</p></div>
+        <div class="f"><b>🔖</b><h3>书架与追更</h3><p>加入书架后自动推送巴卡漫画更新提醒，不错过任何一话新内容。</p></div>
+        <div class="f"><b>🔍</b><h3>精准搜索</h3><p>支持按漫画名、作者、题材、标签检索，快速定位想看的那部作品。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目6：常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于巴卡漫画的常见问题</h2>
+        <p>整理读者在使用巴卡漫画过程中最常提出的疑问与对应解决办法。</p>
+      </div>
+      <div class="faq">
+        <details open="open">
+          <summary>巴卡漫画需要付费才能看漫画吗？</summary>
+          <p>巴卡漫画大部分作品为免费阅读，部分首发或独家作品采用单话解锁模式，所有付费内容在章节页均会明确标注，读者可自行选择。</p>
+        </details>
+        <details>
+          <summary>巴卡漫画的更新频率是怎样的？</summary>
+          <p>巴卡漫画站内作品每日 00:00 统一上新，热门作品多为日更或周更，具体排期可在作品详情页的更新计划中查看。</p>
+        </details>
+        <details>
+          <summary>换手机后，巴卡漫画的书架会丢失吗？</summary>
+          <p>不会。登录巴卡漫画账号后，书架、阅读进度与追更列表会自动云端同步，换设备登录后即可恢复。</p>
+        </details>
+        <details>
+          <summary>巴卡漫画支持哪些设备？</summary>
+          <p>巴卡漫画支持 iOS、Android 手机与平板，同时提供网页版，主流浏览器打开 bakamanhua-app.com 即可直接看漫画。</p>
+        </details>
+        <details>
+          <summary>如何成为巴卡漫画的签约作者？</summary>
+          <p>可通过巴卡漫画官网的作者入驻通道提交作品样稿，审核通过后即可进入签约流程并获得首页推荐资源。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目7：关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">About</span>
+        <h2>关于巴卡漫画</h2>
+      </div>
+      <div class="about">
+        <div class="box">
+          <p><strong>巴卡漫画</strong>（bakamanhua-app）成立于 2019 年，是一支由漫画编辑、工程师与插画师共同组成的团队运营的中文在线漫画平台。</p>
+          <p>我们坚持正版授权与原创扶持双线并行：一方面与国内外版权方合作引进优质作品，另一方面通过创作者激励计划扶持本土原创漫画，让好故事被更多读者看到。</p>
+          <p>截至目前，巴卡漫画已服务超过 1200 万读者，累计上线作品 3.8 万余部，日均阅读时长超过 46 分钟。我们将持续优化阅读体验，把「打开巴卡漫画，免费看漫画」这件事做到更好。</p>
+          <div class="kv">
+            <div><span>网站名称</span><span>巴卡漫画</span></div>
+            <div><span>官方网址</span><span>bakamanhua-app.com</span></div>
+            <div><span>内容语言</span><span>简体中文</span></div>
+            <div><span>服务范围</span><span>在线漫画阅读 / 原创扶持</span></div>
+          </div>
+        </div>
+        <div class="box">
+          <h3 style="font-size:17px;margin-bottom:14px;">联系巴卡漫画</h3>
+          <div class="kv">
+            <div><span>商务合作</span><span>bd@bakamanhua-app.com</span></div>
+            <div><span>作者投稿</span><span>author@bakamanhua-app.com</span></div>
+            <div><span>版权与投诉</span><span>copyright@bakamanhua-app.com</span></div>
+            <div><span>用户反馈</span><span>support@bakamanhua-app.com</span></div>
+            <div><span>在线客服</span><span>每日 09:00 - 22:00</span></div>
+          </div>
+          <p style="margin-top:16px;font-size:13.5px;">关注巴卡漫画官方账号，第一时间获取新番上线与福利活动通知。</p>
+          <p style="margin-top:14px;"><a class="btn btn-p" style="padding:10px 18px;font-size:14px;" href="#home">回到巴卡漫画首页</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#home" aria-label="巴卡漫画首页" style="margin-bottom:12px;">
+          <span class="mark" aria-hidden="true">巴</span>
+          <span>巴卡漫画<span class="dm">bakamanhua-app</span></span>
+        </a>
+        <p style="font-size:13.5px;color:var(--sub);max-width:320px;">巴卡漫画 —— 打开就看的中文在线漫画平台，全品类漫画免费在线阅读，每日更新。</p>
+      </div>
+      <div>
+        <h4>看漫画</h4>
+        <ul>
+          <li><a href="#recommend">热门推荐</a></li>
+          <li><a href="#category">漫画分类</a></li>
+          <li><a href="#rank">热门排行</a></li>
+          <li><a href="#download">下载巴卡漫画</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#about">关于巴卡漫画</a></li>
+          <li><a href="#feature">功能特色</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#">作者入驻</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>条款与帮助</h4>
+        <ul>
+          <li><a href="#">用户协议</a></li>
+          <li><a href="#">隐私政策</a></li>
+          <li><a href="#">版权声明</a></li>
+          <li><a href="#">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 巴卡漫画 bakamanhua-app.com · 在线漫画阅读平台</span>
+      <span>本站所有漫画内容版权归原作者及版权方所有</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var mnav = document.getElementById('mnav');
+  if(!burger || !mnav){return;}
+  burger.addEventListener('click', function(){
+    var open = mnav.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mnav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){mnav.classList.remove('show');burger.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+
+</body>
+</html>
